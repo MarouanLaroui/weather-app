@@ -10,8 +10,8 @@ export class WeatherService {
 
   constructor(private http : HttpClient) { }
 
-  getWeatherByName(name : string) : Observable<any>{
-    return this.http.get<any>(environment.openApiURL + "/")
+  getWeatherByName(cityName : string) : Observable<any>{
+    return this.http.get<any>(environment.openApiURL + `/data/2.5/forecast?q=${cityName}&limit=5&appid=${environment.openWeatherApiKey}`)
   }
 
   getWeatherByCoordinates(longitude : number, latitude : number): Observable<any>{
