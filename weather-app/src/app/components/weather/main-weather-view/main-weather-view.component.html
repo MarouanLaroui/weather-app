@@ -1,14 +1,38 @@
-<div class="container">
-    <div>
-        <img src='http://openweathermap.org/img/wn/{{weather.icon}}@2x.png'/>
-         <p>{{weather.main_description}}</p>
-         <p>{{weather.temperature}}</p>
-    </div>
+<div>
+    <div class="row">
+        <div class="col">
+            <img src='http://openweathermap.org/img/wn/{{weather.icon}}@2x.png'/>
+            <p>22/02/2000 15h</p>
+        </div>
+        <div class="col">
+            <p>{{weather.main_description}}</p>
+            <p>{{weather.temperature}}°F</p>
+        </div>
+        <div class="col">
 
-    <div>
-        <p>{{weather.temp_min}}</p>
-        <p>{{weather.temp_max}}</p>
-        <p>{{weather.wind_speed}}</p>
-        <p>{{weather.humidity}}</p>
+            <div>
+                <p>Min</p>
+                <p>{{weather.temp_min}}°F</p>
+            </div>
+            
+            <div>
+                <p>Max</p>
+                <p>{{weather.temp_max}}°F</p>
+            </div>
+        </div>
+
+        <div class="col">
+
+            <div>
+                <p>Wind speed</p>
+                <p>{{weather.wind_speed}} mph</p>
+            </div>
+            
+            <div>
+                <p>Humidity</p>
+                <p>{{weather.humidity}}%</p>
+            </div>
+            
+        </div>
     </div>
 </div>
