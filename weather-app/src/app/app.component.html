@@ -17,8 +17,8 @@
   </div>
   <div *ngIf="weathers | async as weathers">
     <main-weather-view [weather]="weathers[0]"></main-weather-view>
+    <weather-carroussel [weathers]="weathers"></weather-carroussel>
   </div>
-  
   
 </main>
 <router-outlet></router-outlet>
