@@ -8,10 +8,17 @@
     <p>searched city {{searchedCityName}}</p>
   </div>
   <div *ngFor="let weather of weathers | async">
-    <div>
+    <!--
+      <div>
       {{weather}}
     </div>
+    -->
+    
   </div>
+  <div *ngIf="weathers | async as weathers">
+    <main-weather-view [weather]="weathers[0]"></main-weather-view>
+  </div>
+  
   
 </main>
 <router-outlet></router-outlet>
