@@ -13,13 +13,25 @@ export class WeatherService {
   
   private jsonToWeathers(json : any) : Weather[]{
     let weathers : Weather[] = []
-
+    let dateText  = ""
+    let currentStrDate =""
+    let currentHour = ""
+    
+    
     for(let i = 0; i<json.list.length;i++){
+
+      dateText = json.list[i].dt_txt
+      let splitedDateText = dateText.split(" ")
+      currentStrDate = splitedDateText[0]
+      currentHour = splitedDateText[1].split(":")[0] +":"+splitedDateText[1].split(":")[1]
+
       weathers.push(
         new Weather(
           json.list[i].weather[0].id,
           json.list[i].weather[0].description,
           json.list[i].weather[0].icon,
+          new Date(currentStrDate),
+          currentHour,
           json.list[i].main.temp,
           json.list[i].main.temp_min,
           json.list[i].main.temp_max,

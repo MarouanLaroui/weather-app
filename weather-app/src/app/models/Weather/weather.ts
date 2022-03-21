@@ -3,6 +3,8 @@ export class Weather {
     id : number;
     main_description : string;
     icon : string;
+    date : Date;
+    hour : string;
     temperature : number;
     temp_min : number;
     temp_max : number;
@@ -13,6 +15,8 @@ export class Weather {
         id : number,
         main_description : string,
         icon : string,
+        date : Date,
+        hour : string,
         temperature : number,
         temp_min : number,
         temp_max : number,
@@ -22,6 +26,8 @@ export class Weather {
         this.id = id;
         this.main_description = main_description;
         this.icon = icon;
+        this.date = date,
+        this.hour = hour;
         this.temperature = temperature;
         this.temp_max = temp_max;
         this.temp_min = temp_min;

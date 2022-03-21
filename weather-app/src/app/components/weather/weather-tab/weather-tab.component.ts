@@ -14,5 +14,12 @@ export class WeatherTabComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  /*
+  getNextWeather(){
+    this.weathers.filter(weather => {
+      weather.
+    })
+  }
+  */
 
 }
