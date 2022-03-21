@@ -1,7 +1,7 @@
 <main>
 
   <div>
-    <searchbar class="col s12" [searchedString]="searchedCityName"></searchbar>
+    <searchbar class="col s12" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'"></searchbar>
     <button (click)="searchCityWeather()">Search</button>
   </div>
   <div>

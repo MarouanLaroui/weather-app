@@ -12,7 +12,7 @@ export class AppComponent {
 
   title = 'weather-app';
   weathers!: Observable<Weather[]>
-  searchedCityName : string = "London"
+  searchedCityName : string = ""
 
   constructor(private weatherService : WeatherService){}
 
