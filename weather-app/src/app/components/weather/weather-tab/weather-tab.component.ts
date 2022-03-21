@@ -9,17 +9,21 @@ import { Weather } from 'src/app/models/Weather/weather';
 export class WeatherTabComponent implements OnInit {
 
   @Input() weathers : Weather[] = []
+  filteredWeathers : Weather[] = []
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-  /*
-  getNextWeather(){
-    this.weathers.filter(weather => {
-      weather.
-    })
-  }
-  */
+    if(this.weathers.length>0){
+      console.log("filter")
 
+      let lastDate : Date = new Date();
+      let currentHour : string = this.weathers[0].hour;
+
+      this.filteredWeathers = this.weathers.filter(weather => {
+        return weather.date != lastDate &&  weather.hour == currentHour
+      })
+    }
+  }
+  
 }
