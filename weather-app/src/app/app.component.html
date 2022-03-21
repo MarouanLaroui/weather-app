@@ -1,24 +1,25 @@
-<main class="container">
-
-  <div>
-    <searchbar class="col s12" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'"></searchbar>
-    <button (click)="searchCityWeather()">Search</button>
-  </div>
-  <div>
-    <p>searched city {{searchedCityName}}</p>
-  </div>
-  <div *ngFor="let weather of weathers | async">
-    <!--
-      <div>
-      {{weather}}
+<body class="gardient-bg">
+  <div class="container">
+    <div>
+      <searchbar class="col s12" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'"></searchbar>
+      <button (click)="searchCityWeather()">Search</button>
     </div>
-    -->
+
+    <div>
+      <p>searched city {{searchedCityName}}</p>
+    </div>
+
+    <div *ngIf="weathers | async as weathers">
+      <main-weather-view [weather]="weathers[0]"></main-weather-view>
+      <h3>Weather by hour</h3>
+      <weather-carroussel [weathers]="weathers" [nbItems]="9"></weather-carroussel>
+
+      <h3>Next day weather</h3>
+    </div>
     
   </div>
-  <div *ngIf="weathers | async as weathers">
-    <main-weather-view [weather]="weathers[0]"></main-weather-view>
-    <weather-carroussel [weathers]="weathers"></weather-carroussel>
-  </div>
+
+  <router-outlet></router-outlet>
   
-</main>
-<router-outlet></router-outlet>
+</body>
+

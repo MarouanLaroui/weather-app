@@ -1,5 +1,10 @@
-body{
+.gardient-bg{
     background: linear-gradient(to bottom, rgb(43,50,178) 0%, rgb(20,136,204) 100%);  
     background-repeat: no-repeat;  
     background-attachment: fixed;  
+    color : white;
+    height : 100%;
+    width: 100%;
 }
+
+body { min-height: 100vh; }

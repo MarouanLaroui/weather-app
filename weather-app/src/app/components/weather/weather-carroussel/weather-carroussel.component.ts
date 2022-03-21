@@ -9,12 +9,28 @@ import { Weather } from 'src/app/models/Weather/weather';
 export class WeatherCarrousselComponent implements OnInit {
 
   @Input() weathers : Weather[] = []
+  @Input() nbItems : number = 0
   displayed_weathers : Weather[] = []
+  carrousselIndex : number = 0
 
   constructor() { }
 
   ngOnInit(): void {
-    this.displayed_weathers = this.weathers.splice(0,7)
+    this.displayed_weathers = this.weathers.slice(0,9)
+  }
+
+  swipeRight(){
+    if(this.carrousselIndex + this.nbItems < this.weathers.length - 1){
+      this.carrousselIndex++
+      this.displayed_weathers = this.weathers.slice(this.carrousselIndex,this.carrousselIndex + this.nbItems)
+    }
+  }
+
+  swipeLeft(){
+    if(this.carrousselIndex > 0){
+      this.carrousselIndex--
+      this.displayed_weathers = this.weathers.slice(this.carrousselIndex,this.carrousselIndex + this.nbItems)
+    }
   }
 
 }

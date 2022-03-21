@@ -8,6 +8,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { MainWeatherViewComponent } from './components/weather/main-weather-view/main-weather-view.component';
 import { WeatherCardComponent } from './components/weather/weather-card/weather-card.component';
 import { WeatherCarrousselComponent } from './components/weather/weather-carroussel/weather-carroussel.component';
+import { WeatherDayCardComponent } from './components/weather/weather-day-card/weather-day-card.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { WeatherCarrousselComponent } from './components/weather/weather-carrous
     SearchbarComponent,
     MainWeatherViewComponent,
     WeatherCardComponent,
-    WeatherCarrousselComponent
+    WeatherCarrousselComponent,
+    WeatherDayCardComponent
   ],
   imports: [
     BrowserModule,
