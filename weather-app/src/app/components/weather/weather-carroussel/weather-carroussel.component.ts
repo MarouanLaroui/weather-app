@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Weather } from 'src/app/models/Weather/weather';
 
 @Component({
@@ -10,6 +10,8 @@ export class WeatherCarrousselComponent implements OnInit {
 
   @Input() weathers : Weather[] = []
   @Input() nbItems : number = 0
+  @Output() onWeatherSelection = new EventEmitter<Weather>();
+
   displayed_weathers : Weather[] = []
   carrousselIndex : number = 0
 
@@ -19,6 +21,9 @@ export class WeatherCarrousselComponent implements OnInit {
     this.displayed_weathers = this.weathers.slice(0,9)
   }
 
+  selectWeather(weather : Weather){
+    this.onWeatherSelection.emit(weather)
+  }
   swipeRight(){
     if(this.carrousselIndex + this.nbItems < this.weathers.length - 1){
       this.carrousselIndex++

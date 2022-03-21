@@ -13,11 +13,15 @@ export class AppComponent {
   title = 'weather-app';
   weathers!: Observable<Weather[]>
   searchedCityName : string = ""
+  selectedWeather? : Weather
 
   constructor(private weatherService : WeatherService){}
 
   searchCityWeather(){
-    console.log("click")
     this.weathers = this.weatherService.getWeatherByName(this.searchedCityName)
+  }
+
+  selectWeather(weather : Weather){
+    this.selectedWeather = weather
   }
 }

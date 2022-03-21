@@ -3,7 +3,7 @@
         <
     </div>
     <div *ngFor="let weather of displayed_weathers" class="col">
-        <weather-card [weather]="weather"></weather-card>
+        <weather-card [weather]="weather" (click)="selectWeather(weather)"></weather-card>
     </div>
     <div class="col" (click)="swipeRight()">
         >

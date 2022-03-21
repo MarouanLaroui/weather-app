@@ -10,9 +10,14 @@
     </div>
 
     <div *ngIf="weathers | async as weathers">
-      <main-weather-view [weather]="weathers[0]"></main-weather-view>
+      <div *ngIf="selectedWeather">
+        <main-weather-view [weather]="selectedWeather"></main-weather-view>
+      </div>
+      <div *ngIf="selectedWeather == undefined">
+        <main-weather-view [weather]="weathers[0]"></main-weather-view>
+      </div>
       <h3>Weather by hour</h3>
-      <weather-carroussel [weathers]="weathers" [nbItems]="9"></weather-carroussel>
+      <weather-carroussel [weathers]="weathers" (onWeatherSelection)="selectWeather($event)" [nbItems]="9"></weather-carroussel>
 
       <h3>Next 5 day</h3>
       <weather-tab [weathers]="weathers"></weather-tab>
