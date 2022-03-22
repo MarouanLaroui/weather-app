@@ -4,6 +4,7 @@
     <div>
       <searchbar class="col s12" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'"></searchbar>
       <button (click)="searchCityWeather()">Search</button>
+      <unit-selector [(unity)]="selectedUnit"></unit-selector>
     </div>
 
     <div>
@@ -13,28 +14,28 @@
     <div *ngIf="weathers | async as weathers">
 
       <div *ngIf="selectedWeather" class="marged-div">
-        <main-weather-view [weather]="selectedWeather" [tempUnit]="tempUnit" class="marged-div"></main-weather-view>
+        <main-weather-view [weather]="selectedWeather" [tempUnit]="selectedUnit" class="marged-div"></main-weather-view>
       </div>
 
       <div *ngIf="selectedWeather == undefined" class="marged-div">
-        <main-weather-view [weather]="weathers[0]" [tempUnit]="tempUnit" class="marged-div"></main-weather-view>
+        <main-weather-view [weather]="weathers[0]" [tempUnit]="selectedUnit" class="marged-div"></main-weather-view>
       </div>
 
       <div class="marged-div">
         <h3>Weather by hour</h3>
-        <weather-carroussel [weathers]="weathers" (onWeatherSelection)="selectWeather($event)" [nbItems]="7" [tempUnit]="tempUnit"></weather-carroussel>
+        <weather-carroussel [weathers]="weathers" (onWeatherSelection)="selectWeather($event)" [nbItems]="7" [tempUnit]="selectedUnit"></weather-carroussel>
       </div>
       
       <div class="marged-div">
         <h3>Next 5 day</h3>
-        <weather-tab [weathers]="weathers" [tempUnit]="tempUnit"></weather-tab>
+        <weather-tab [weathers]="weathers" [tempUnit]="selectedUnit"></weather-tab>
       </div>
       
     </div>
     
   </div>
 
-  <router-outlet></router-outlet>
+  <!--<router-outlet></router-outlet>!-->
   
 </body>
 

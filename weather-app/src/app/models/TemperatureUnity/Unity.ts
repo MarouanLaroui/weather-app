@@ -1,5 +1,5 @@
 export enum Unity{
-    Kelvin,
-    Fahrenheit,
-    Celsius
+    Kelvin ="Kelvin",
+    Fahrenheit = "Fahrenheit",
+    Celsius = "Celsius"
 }

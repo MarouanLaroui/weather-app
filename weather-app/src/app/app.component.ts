@@ -15,7 +15,7 @@ export class AppComponent {
   weathers!: Observable<Weather[]>
   searchedCityName : string = ""
   selectedWeather? : Weather
-  tempUnit : Unity = Unity.Celsius
+  selectedUnit : Unity = Unity.Celsius
 
   constructor(private weatherService : WeatherService){}
 

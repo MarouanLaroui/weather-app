@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { WeatherCardComponent } from './components/weather/weather-card/weather-
 import { WeatherCarrousselComponent } from './components/weather/weather-carroussel/weather-carroussel.component';
 import { WeatherTabComponent } from './components/weather/weather-tab/weather-tab.component';
 import { WeatherTabRowComponent } from './components/weather/weather-tab-row/weather-tab-row.component';
+import { UnitSelectorComponent } from './components/unit-selector/unit-selector.component';
 
 
 @NgModule({
@@ -21,11 +23,13 @@ import { WeatherTabRowComponent } from './components/weather/weather-tab-row/wea
     WeatherCarrousselComponent,
     WeatherTabComponent,
     WeatherTabRowComponent,
+    UnitSelectorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
