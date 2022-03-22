@@ -1,31 +1,42 @@
 
 <body class="gardient-bg">
+
+  <navbar></navbar>
+
   <div class="container">
-    <h2>Want to check the weather ?</h2>
+    <div class="marged-div">
+      
     
-    <div class="container row">
-      <searchbar class="col-6" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'" (onSearchEvent)="searchCityWeather()"></searchbar>
-      <!--<button (click)="searchCityWeather()" class="btn btn-light col">Search</button>!-->
-      <unit-selector [(unity)]="selectedUnit" class="col-2"></unit-selector>
+      <div class="row align-items-center">
+        <h3 class="col-3">check the weather</h3>
+        <searchbar class="col-6" [(searchedString)]="searchedCityName" [placeholder]="'Enter a city'" (onSearchEvent)="searchCityWeather()"></searchbar>
+        <!--<button (click)="searchCityWeather()" class="btn btn-light col">Search</button>!-->
+        <unit-selector [(unity)]="selectedUnit" class="col-2"></unit-selector>
+      </div>
+    </div>
+    
+    <div *ngIf="selectedWeather == null && !weathers">
+      <p class="catch-phrase">Have a nice day and hopefully good weather ! Not sure about it? Check it out above !</p>
     </div>
 
+    
     <div *ngIf="weathers | async as weathers">
 
       <div *ngIf="selectedWeather" class="marged-div">
         <main-weather-view [weather]="selectedWeather" [tempUnit]="selectedUnit" class="marged-div"></main-weather-view>
       </div>
 
-      <div *ngIf="selectedWeather == undefined" class="marged-div">
+      <div *ngIf="selectedWeather == null" class="marged-div">
         <main-weather-view [weather]="weathers[0]" [tempUnit]="selectedUnit" class="marged-div"></main-weather-view>
       </div>
 
       <div class="marged-div">
-        <h3>Weather by hour</h3>
+        <h3 class="subtitle">Weather by hour</h3>
         <weather-carroussel [weathers]="weathers" (onWeatherSelection)="selectWeather($event)" [nbItems]="7" [tempUnit]="selectedUnit"></weather-carroussel>
       </div>
       
       <div class="marged-div">
-        <h3>Next 5 day</h3>
+        <h3 class="subtitle">Next 5 day</h3>
         <weather-tab [weathers]="weathers" [tempUnit]="selectedUnit"></weather-tab>
       </div>
 

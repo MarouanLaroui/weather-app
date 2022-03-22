@@ -10,5 +10,14 @@
 body { min-height: 100vh; }
 
 .marged-div{
-    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.subtitle{
+    margin-bottom: 2%;
+}
+
+.catch-phrase{
+    font-size:4.4rem;
+    font-weight: 230;
 }

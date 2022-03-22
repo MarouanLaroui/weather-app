@@ -16,7 +16,7 @@ export class AppComponent {
   searchedCityName : string = ""
   selectedWeather? : Weather
   selectedUnit : Unity = Unity.Celsius
-
+ 
   constructor(private weatherService : WeatherService){}
 
   searchCityWeather(){
