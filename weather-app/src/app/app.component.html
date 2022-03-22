@@ -4,24 +4,22 @@
   <navbar></navbar>
 
   <div class="container">
-    <div class="marged-div">
-      
-    
+    <!--Searchbar and select-->
+    <div class="marged-div">  
       <div class="row align-items-center">
-        <h3 class="col-3">check the weather</h3>
+        <h3 class="col-3">Check the weather</h3>
         <searchbar class="col-6" [(searchedString)]="searchedCityName" [placeholder]="'Enter a city'" (onSearchEvent)="searchCityWeather()"></searchbar>
-        <!--<button (click)="searchCityWeather()" class="btn btn-light col">Search</button>!-->
         <unit-selector [(unity)]="selectedUnit" class="col-2"></unit-selector>
       </div>
     </div>
     
-    <div *ngIf="selectedWeather == null && !weathers" class="marged-div">
+    <!--Welcome message-->
+    <div *ngIf="selectedWeather == null && !weathers && isFirstApparition" class="marged-div">
       <p class="catch-phrase">Have a nice day and hopefully good weather ! Not sure about it? Check it out above !</p>
     </div>
 
-    
-    <div *ngIf="weathers | async as weathers">
-
+    <!--Weather dashboard-->
+    <div *ngIf="weathers | async as weathers; else error">
       <div *ngIf="selectedWeather" class="marged-div">
         <main-weather-view [weather]="selectedWeather" [tempUnit]="selectedUnit" class="marged-div"></main-weather-view>
       </div>
@@ -35,18 +33,22 @@
         <weather-carroussel [weathers]="weathers" (onWeatherSelection)="selectWeather($event)" [nbItems]="7" [tempUnit]="selectedUnit"></weather-carroussel>
       </div>
       
-      <div class="marged-div">
+      <div class="bottom-padding">
         <h3 class="subtitle">Next 5 day</h3>
         <weather-tab [weathers]="weathers" [tempUnit]="selectedUnit"></weather-tab>
       </div>
-
-      <div>d</div>
       
     </div>
+
+    <div *ngIf="weathers | async">
+      <p>{{errorMsg}}</p>
+    </div>
+    <!--Error message-->
+    <ng-template #error class="marged-div">
+      <p *ngIf="!isFirstApparition" class="catch-phrase">{{errorMsg}}</p>
+    </ng-template>
     
   </div>
-
-  <!--<router-outlet></router-outlet>!-->
   
 </body>
 

@@ -2,7 +2,7 @@
 
     <div>
         <div class="small-headliner">London, Uk</div>
-        <div>22/02/2000 15h</div>
+        <div>{{weather.date.toUTCString()}}</div>
     </div>
 
     <div class="row align-items-center text-center">
@@ -23,13 +23,11 @@
             <div>
                 <h3>{{min_temp}}°</h3>
                 <p class="subText">Min</p>
-                
             </div>
             
             <div>
                 <h3>{{max_temp}}°</h3>
                 <p class="subText">Max</p>
-                
             </div>
         </div>
 
@@ -61,7 +59,6 @@
                 <p class="subText">Humidity</p>
                 
             </div>
-            
         </div>
     </div>
 </div>

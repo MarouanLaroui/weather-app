@@ -16,14 +16,18 @@ export class AppComponent {
   searchedCityName : string = ""
   selectedWeather? : Weather
   selectedUnit : Unity = Unity.Celsius
+  errorMsg : string = "Oops wrong city name, try again !"
+  isFirstApparition : boolean = true
  
   constructor(private weatherService : WeatherService){}
 
   searchCityWeather(){
     this.weathers = this.weatherService.getWeatherByName(this.searchedCityName)
+    this.isFirstApparition = false
   }
 
   selectWeather(weather : Weather){
     this.selectedWeather = weather
+    this.isFirstApparition = false
   }
 }

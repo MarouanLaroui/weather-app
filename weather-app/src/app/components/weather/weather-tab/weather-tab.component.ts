@@ -16,6 +16,7 @@ export class WeatherTabComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
     if(this.weathers.length>0){
 
       let lastDate : Date = new Date();
@@ -26,5 +27,4 @@ export class WeatherTabComponent implements OnInit {
       })
     }
   }
-  
 }

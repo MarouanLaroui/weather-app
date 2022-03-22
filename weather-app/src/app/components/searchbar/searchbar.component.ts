@@ -14,8 +14,7 @@ export class SearchbarComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onKey(event : any){
     this.searchedStringChange.emit(event.target.value);
