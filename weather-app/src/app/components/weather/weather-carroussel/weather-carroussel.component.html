@@ -1,8 +1,8 @@
 <div class="row align-items-center">
-    <div class="col" (click)="swipeLeft()">
+    <div class="col right-text" (click)="swipeLeft()">
         <
     </div>
-    <div *ngFor="let weather of displayed_weathers" class="col">
+    <div *ngFor="let weather of displayed_weathers" class="col zoom">
         <weather-card [weather]="weather" [tempUnit]="tempUnit"(click)="selectWeather(weather)"></weather-card>
     </div>
     <div class="col" (click)="swipeRight()">

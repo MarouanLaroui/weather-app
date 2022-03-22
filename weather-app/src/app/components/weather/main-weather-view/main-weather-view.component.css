@@ -12,11 +12,13 @@ img{
 }
 
 .headliner{
-    font-size:4rem
+    font-size:5.5rem;
+    font-weight: 230;
 }
 
 .small-headliner{
-    font-size:3rem
+    font-size:3rem;
+    font-weight: 250;
 }
 
 .subText{

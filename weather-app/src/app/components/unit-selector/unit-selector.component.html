@@ -1,3 +1,3 @@
-<select [(ngModel)]="unity" (change)="unityChange.emit(unity)">
+<select class="form-select" [(ngModel)]="unity" (change)="unityChange.emit(unity)">
     <option *ngFor="let unit of units" [ngValue]="unit">{{unit}}</option>
 </select>

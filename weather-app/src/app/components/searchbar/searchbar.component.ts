@@ -10,6 +10,7 @@ export class SearchbarComponent implements OnInit {
   @Input() searchedString : string = "";
   @Input() placeholder : String = "";
   @Output() searchedStringChange = new EventEmitter();
+  @Output() onSearchEvent = new EventEmitter();
 
   constructor() {}
 
@@ -18,6 +19,10 @@ export class SearchbarComponent implements OnInit {
 
   onKey(event : any){
     this.searchedStringChange.emit(event.target.value);
+  }
+
+  onButtonClick(){
+    this.onSearchEvent.emit()
   }
 
 }
