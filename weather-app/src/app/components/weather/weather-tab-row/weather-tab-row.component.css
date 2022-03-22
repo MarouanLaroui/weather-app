@@ -1,3 +1,8 @@
 .row{
     background-color: #1960a0;
+    border-radius: 8px;
+}
+
+.subText{
+    color: lightgray;
 }

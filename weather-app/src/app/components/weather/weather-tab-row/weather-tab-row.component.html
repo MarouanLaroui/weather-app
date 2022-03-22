@@ -1,31 +1,31 @@
-<div class="row">
+<div class="row text-center align-items-center">
 
     <div class="col">
         <img src='http://openweathermap.org/img/wn/{{weather.icon}}@2x.png' alt="..."/>
     </div>
 
     <div class="col">
-        <p>{{weather.date.toDateString().split(" ")[0]}}</p>
-        <p>{{weather.date.toDateString().split(" ")[1] + " "+ weather.date.toDateString().split(" ")[2]}}</p>
+        <h5>{{weather.date.toDateString().split(" ")[0]}}</h5>
+        <span class="subText">{{weather.date.toDateString().split(" ")[1] + " "+ weather.date.toDateString().split(" ")[2]}}</span>
     </div>
 
     <div class="col">
-        <p>{{weather.temp_min}}</p>
-        <p>Low</p>
+        <h5 class="rowText">{{weather.temp_min}}</h5>
+        <span class="subText rowText">Low</span>
     </div>
 
     <div class="col">
-        <p>{{weather.temp_max}}</p>
-        <p>High</p>
+        <h5>{{weather.temp_max}}</h5>
+        <span class="subText">High</span>
     </div>
 
     <div class="col">
-        <p>{{weather.wind_speed}}Mph</p>
-        <p>Wind</p>
+        <h5>{{weather.wind_speed}}Mph</h5>
+        <span class="subText">Wind</span>
     </div>
 
     <div class="col">
-        <p>{{weather.humidity}}%</p>
-        <p>Humidity</p>
+        <h5>{{weather.humidity}}%</h5>
+        <span class="subText">Humidity</span>
     </div>
 </div>
