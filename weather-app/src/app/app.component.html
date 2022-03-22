@@ -1,15 +1,10 @@
 <body class="gardient-bg">
   <div class="container">
-
+    <h2>Want to check the weather ?</h2>
     <div>
       <searchbar class="col s12" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'"></searchbar>
       <button (click)="searchCityWeather()">Search</button>
       <unit-selector [(unity)]="selectedUnit"></unit-selector>
-      <p>{{selectedUnit}}</p>
-    </div>
-
-    <div>
-      <p>searched city {{searchedCityName}}</p>
     </div>
 
     <div *ngIf="weathers | async as weathers">
@@ -31,6 +26,8 @@
         <h3>Next 5 day</h3>
         <weather-tab [weathers]="weathers" [tempUnit]="selectedUnit"></weather-tab>
       </div>
+
+      <div>d</div>
       
     </div>
     

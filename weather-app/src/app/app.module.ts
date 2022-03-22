@@ -12,6 +12,7 @@ import { WeatherCarrousselComponent } from './components/weather/weather-carrous
 import { WeatherTabComponent } from './components/weather/weather-tab/weather-tab.component';
 import { WeatherTabRowComponent } from './components/weather/weather-tab-row/weather-tab-row.component';
 import { UnitSelectorComponent } from './components/unit-selector/unit-selector.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { UnitSelectorComponent } from './components/unit-selector/unit-selector.
     WeatherTabComponent,
     WeatherTabRowComponent,
     UnitSelectorComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
