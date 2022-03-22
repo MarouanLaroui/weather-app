@@ -14,6 +14,9 @@ export class WeatherCarrousselComponent implements OnInit {
   @Output() onWeatherSelection = new EventEmitter<Weather>();
   @Input() tempUnit! : Unity
 
+  displayRightButton : boolean = true
+  displayLeftButton : boolean = false
+
   displayed_weathers : Weather[] = []
   carrousselIndex : number = 0
 
@@ -26,18 +29,28 @@ export class WeatherCarrousselComponent implements OnInit {
   selectWeather(weather : Weather){
     this.onWeatherSelection.emit(weather)
   }
+
+  updateButtonVisibility(){
+    this.displayRightButton = this.carrousselIndex + this.nbItems <this.weathers.length - 1? true : false
+    this.displayLeftButton = this.carrousselIndex > 0? true : false
+  }
+
   swipeRight(){
     if(this.carrousselIndex + this.nbItems < this.weathers.length - 1){
       this.carrousselIndex++
-      this.displayed_weathers = this.weathers.slice(this.carrousselIndex,this.carrousselIndex + this.nbItems)
+      this.displayed_weathers = this.weathers.slice(this.carrousselIndex,this.carrousselIndex + this.nbItems) 
+      this.updateButtonVisibility()
     }
+    
   }
 
   swipeLeft(){
     if(this.carrousselIndex > 0){
       this.carrousselIndex--
       this.displayed_weathers = this.weathers.slice(this.carrousselIndex,this.carrousselIndex + this.nbItems)
+      this.updateButtonVisibility()
     }
+    
   }
 
 }
