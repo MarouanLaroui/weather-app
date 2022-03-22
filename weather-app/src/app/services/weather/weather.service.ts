@@ -36,7 +36,9 @@ export class WeatherService {
           json.list[i].main.temp_min,
           json.list[i].main.temp_max,
           json.list[i].main.humidity,
-          json.list[i].wind.speed
+          json.list[i].wind.speed,
+          json.list[i].main.feels_like,
+          json.list[i].main.pressure
         )
       )
     }

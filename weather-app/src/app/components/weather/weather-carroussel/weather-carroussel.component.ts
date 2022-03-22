@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Unity } from 'src/app/models/TemperatureUnity/Unity';
 import { Weather } from 'src/app/models/Weather/weather';
 
 @Component({
@@ -11,6 +12,7 @@ export class WeatherCarrousselComponent implements OnInit {
   @Input() weathers : Weather[] = []
   @Input() nbItems : number = 0
   @Output() onWeatherSelection = new EventEmitter<Weather>();
+  @Input() tempUnit! : Unity
 
   displayed_weathers : Weather[] = []
   carrousselIndex : number = 0
@@ -18,7 +20,7 @@ export class WeatherCarrousselComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.displayed_weathers = this.weathers.slice(0,9)
+    this.displayed_weathers = this.weathers.slice(0,this.nbItems)
   }
 
   selectWeather(weather : Weather){

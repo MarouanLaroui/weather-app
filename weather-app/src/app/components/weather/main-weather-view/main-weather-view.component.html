@@ -1,7 +1,7 @@
 <div>
 
     <div>
-        <h2>London, Uk</h2>
+        <p class="small-headliner">London, Uk</p>
         <p>22/02/2000 15h</p>
     </div>
 
@@ -10,8 +10,8 @@
         <div class="col container align-items-center right-bordered">
             <img src='http://openweathermap.org/img/wn/{{weather.icon}}@2x.png'/>
             <div>
-                <h1>{{weather.temperature.toFixed(0)}}°F</h1>
-                <h4>{{weather.main_description}}</h4>
+                <h1>{{general_temp}}°</h1>
+                <p>{{weather.main_description}}</p>
             </div>
             
         </div>
@@ -21,14 +21,14 @@
         <div class="col">
 
             <div>
-                <h5>{{weather.temp_min}}°F</h5>
-                <p>Min</p>
+                <h5>{{min_temp}}°</h5>
+                <p class="subText">Min</p>
                 
             </div>
             
             <div>
-                <h5>{{weather.temp_max}}°F</h5>
-                <p>Max</p>
+                <h5>{{max_temp}}°</h5>
+                <p class="subText">Max</p>
                 
             </div>
         </div>
@@ -36,30 +36,29 @@
         <div class="col">
 
             <div>
-                <h5>{{weather.wind_speed}} mph</h5>
-                <p>Wind speed</p>
-                
+                <h5>{{weather.humidity}}%</h5>
+                <p class="subText">Humidity</p>
+            </div>
+
+            <div>
+                <h5>{{weather.feels_like}}°</h5>
+                <p class="subText">Feels like</p>
             </div>
             
-            <div>
-                <h5>{{weather.humidity}}%</h5>
-                <p>Humidity</p>
-                
-            </div>
             
         </div>
 
         <div class="col">
 
             <div>
-                <h5>{{weather.wind_speed}} mph</h5>
-                <p>Wind speed</p>
+                <h5>{{weather.pressure}}mBar</h5>
+                <p class="subText">Pressure</p>
                 
             </div>
             
             <div>
                 <h5>{{weather.humidity}}%</h5>
-                <p>Humidity</p>
+                <p class="subText">Humidity</p>
                 
             </div>
             

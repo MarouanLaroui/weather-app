@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Unity } from './models/TemperatureUnity/Unity';
 import { Weather } from './models/Weather/weather';
 import { WeatherService } from './services/weather/weather.service';
 
@@ -14,6 +15,7 @@ export class AppComponent {
   weathers!: Observable<Weather[]>
   searchedCityName : string = ""
   selectedWeather? : Weather
+  tempUnit : Unity = Unity.Celsius
 
   constructor(private weatherService : WeatherService){}
 

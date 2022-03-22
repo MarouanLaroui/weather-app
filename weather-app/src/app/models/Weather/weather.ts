@@ -10,6 +10,9 @@ export class Weather {
     temp_max : number;
     humidity : number;
     wind_speed: number;
+    pressure : number;
+    feels_like: number;
+
 
     constructor(
         id : number,
@@ -21,7 +24,9 @@ export class Weather {
         temp_min : number,
         temp_max : number,
         humidity : number,
-        wind_speed: number
+        wind_speed: number,
+        pressure : number,
+        feels_like : number
     ){
         this.id = id;
         this.main_description = main_description;
@@ -33,5 +38,7 @@ export class Weather {
         this.temp_min = temp_min;
         this.humidity = humidity;
         this.wind_speed = wind_speed;
+        this.pressure = pressure;
+        this.feels_like = feels_like
     }
 }

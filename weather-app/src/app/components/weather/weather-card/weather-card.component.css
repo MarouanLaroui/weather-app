@@ -1,3 +1,8 @@
 .card{
+    background-color: transparent;
+    border-color: whitesmoke;
+}
+
+.efe{
     background-color: #1960a0;
 }

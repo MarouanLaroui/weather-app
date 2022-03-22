@@ -10,3 +10,15 @@ img{
 .right-bordered{
     border-right: 1px whitesmoke solid;
 }
+
+.headliner{
+    font-size:4rem
+}
+
+.small-headliner{
+    font-size:3rem
+}
+
+.subText{
+    color: lightgray;
+}
