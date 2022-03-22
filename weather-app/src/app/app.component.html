@@ -1,5 +1,6 @@
 <body class="gardient-bg">
   <div class="container">
+
     <div>
       <searchbar class="col s12" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'"></searchbar>
       <button (click)="searchCityWeather()">Search</button>
@@ -10,15 +11,20 @@
     </div>
 
     <div *ngIf="weathers | async as weathers">
-      <div *ngIf="selectedWeather">
-        <main-weather-view [weather]="selectedWeather"></main-weather-view>
-      </div>
-      <div *ngIf="selectedWeather == undefined">
-        <main-weather-view [weather]="weathers[0]"></main-weather-view>
-      </div>
-      <h3>Weather by hour</h3>
-      <weather-carroussel [weathers]="weathers" (onWeatherSelection)="selectWeather($event)" [nbItems]="7"></weather-carroussel>
 
+      <div *ngIf="selectedWeather" class="marged-div">
+        <main-weather-view [weather]="selectedWeather" class="marged-div"></main-weather-view>
+      </div>
+
+      <div *ngIf="selectedWeather == undefined" class="marged-div">
+        <main-weather-view [weather]="weathers[0]" class="marged-div"></main-weather-view>
+      </div>
+
+      <div class="marged-div">
+        <h3>Weather by hour</h3>
+        <weather-carroussel [weathers]="weathers" (onWeatherSelection)="selectWeather($event)" [nbItems]="7"></weather-carroussel>
+      </div>
+      
       <h3>Next 5 day</h3>
       <weather-tab [weathers]="weathers"></weather-tab>
     </div>

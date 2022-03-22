@@ -5,25 +5,19 @@
         <p>22/02/2000 15h</p>
     </div>
 
-    <div class="row">
+    <div class="row align-items-center text-center">
 
-        <div class="col right-bordered">
+        <div class="col container align-items-center right-bordered">
             <img src='http://openweathermap.org/img/wn/{{weather.icon}}@2x.png'/>
-            <p>{{weather.main_description}}</p>
+            <div>
+                <h1>{{weather.temperature.toFixed(0)}}°F</h1>
+                <h4>{{weather.main_description}}</h4>
+            </div>
+            
         </div>
         
-        <div class="col">
-            <div>
-                <p>{{weather.main_description}}</p>
-            </div>
+        
 
-            <div>
-                <h5>{{weather.temperature}}°F</h5>
-                <p>current temperature</p>
-            </div>
-            
-            
-        </div>
         <div class="col">
 
             <div>
@@ -37,6 +31,22 @@
                 <p>Max</p>
                 
             </div>
+        </div>
+
+        <div class="col">
+
+            <div>
+                <h5>{{weather.wind_speed}} mph</h5>
+                <p>Wind speed</p>
+                
+            </div>
+            
+            <div>
+                <h5>{{weather.humidity}}%</h5>
+                <p>Humidity</p>
+                
+            </div>
+            
         </div>
 
         <div class="col">

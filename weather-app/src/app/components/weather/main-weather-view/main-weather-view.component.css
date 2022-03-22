@@ -2,3 +2,11 @@
     display: flex; /* or inline-flex */
     flex-direction: row;
 }
+
+img{
+    width: 200px;
+}
+
+.right-bordered{
+    border-right: 1px whitesmoke solid;
+}
