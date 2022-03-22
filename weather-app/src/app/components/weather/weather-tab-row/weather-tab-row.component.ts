@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Unity } from 'src/app/models/TemperatureUnity/Unity';
 import { Weather } from 'src/app/models/Weather/weather';
 import { TemperatureConverter } from 'src/app/utils/TemperatureConverter';
@@ -20,6 +20,14 @@ export class WeatherTabRowComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.computeTemperatures()
+  }
+
+  ngOnChanges(changes: SimpleChanges) { 
+    this.computeTemperatures()
+  }
+
+  computeTemperatures():void{
     this.max_temp = +TemperatureConverter.convertKelvinToUnitMeasure(this.weather.temp_max,this.tempUnit).toFixed(0)
     this.min_temp = +TemperatureConverter.convertKelvinToUnitMeasure(this.weather.temp_min,this.tempUnit).toFixed(0)
     this.general_temp = +TemperatureConverter.convertKelvinToUnitMeasure(this.weather.temperature,this.tempUnit).toFixed(0)

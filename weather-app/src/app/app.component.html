@@ -5,6 +5,7 @@
       <searchbar class="col s12" [(searchedString)]="searchedCityName" [placeholder]="'Rechercher une ville'"></searchbar>
       <button (click)="searchCityWeather()">Search</button>
       <unit-selector [(unity)]="selectedUnit"></unit-selector>
+      <p>{{selectedUnit}}</p>
     </div>
 
     <div>
